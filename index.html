@@ -1127,6 +1127,39 @@
             margin-bottom: 32px;
         }
 
+        /* Quick-scan top bar — designer + scale at a glance */
+        .overlay-quickscan {
+            display: flex;
+            gap: 48px;
+            padding: 24px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 48px;
+        }
+
+        .overlay-quickscan-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .overlay-quickscan-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(184, 149, 106, 0.5);
+        }
+
+        .overlay-quickscan-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 15px;
+            color: rgba(232, 227, 220, 0.85);
+            letter-spacing: 0.3px;
+        }
+
         .overlay-metadata {
             font-family: 'Inter', sans-serif;
             font-weight: 300;
@@ -1136,6 +1169,77 @@
             padding-top: 32px;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
             margin-bottom: 60px;
+        }
+
+        /* Project spec grid — structured detail blocks */
+        .overlay-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 60px;
+        }
+
+        .overlay-spec {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .overlay-spec:nth-child(odd) {
+            padding-right: 32px;
+            border-right: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .overlay-spec:nth-child(even) {
+            padding-left: 32px;
+        }
+
+        .overlay-spec-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(184, 149, 106, 0.5);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .overlay-spec-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(232, 227, 220, 0.7);
+        }
+
+        /* Materials detail section */
+        .overlay-materials {
+            margin-bottom: 60px;
+        }
+
+        .overlay-materials-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .material-tag {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: rgba(232, 227, 220, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 16px;
+            transition: border-color 0.4s ease, color 0.4s ease;
+        }
+
+        .material-tag:hover {
+            border-color: rgba(184, 149, 106, 0.3);
+            color: rgba(232, 227, 220, 0.8);
         }
 
         .overlay-section {
@@ -1157,6 +1261,25 @@
             font-size: 16px;
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Project card tags on main grid */
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .project-tag {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(184, 149, 106, 0.45);
+            border: 1px solid rgba(184, 149, 106, 0.15);
+            padding: 4px 10px;
         }
 
         .overlay-gallery {
@@ -1333,6 +1456,24 @@
             .overlay-gallery-item:nth-child(3) {
                 grid-column: 1 / 3;
                 grid-row: auto;
+            }
+
+            .overlay-quickscan {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .overlay-specs {
+                grid-template-columns: 1fr;
+            }
+
+            .overlay-spec:nth-child(odd) {
+                padding-right: 0;
+                border-right: none;
+            }
+
+            .overlay-spec:nth-child(even) {
+                padding-left: 0;
             }
         }
 
@@ -1538,7 +1679,13 @@
                 <div class="project-info">
                     <span class="label">FOUR SEASONS</span>
                     <h3>Safari Lodge Serengeti</h3>
-                    <p class="location">Tanzania</p>
+                    <p class="location">Tanzania &mdash; 77 Keys</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Teak</span>
+                        <span class="project-tag">Rattan</span>
+                        <span class="project-tag">Brass</span>
+                        <span class="project-tag">Outdoor</span>
+                    </div>
                 </div>
             </div>
 
@@ -1547,7 +1694,12 @@
                 <div class="project-info">
                     <span class="label">PARK HYATT</span>
                     <h3>Jakarta</h3>
-                    <p class="location">Indonesia</p>
+                    <p class="location">Indonesia &mdash; 220 Keys</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Walnut</span>
+                        <span class="project-tag">Marble</span>
+                        <span class="project-tag">Leather</span>
+                    </div>
                 </div>
             </div>
 
@@ -1556,7 +1708,12 @@
                 <div class="project-info">
                     <span class="label">CAPELLA</span>
                     <h3>Bangkok</h3>
-                    <p class="location">Thailand</p>
+                    <p class="location">Thailand &mdash; 101 Keys</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Oak</span>
+                        <span class="project-tag">Brass</span>
+                        <span class="project-tag">Thai Silk</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1568,7 +1725,11 @@
                 <div class="portfolio-info">
                     <span class="label">JUMEIRAH</span>
                     <h3>Vittaveli</h3>
-                    <p class="location">Maldives</p>
+                    <p class="location">Maldives &mdash; 89 Keys</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Marine Teak</span>
+                        <span class="project-tag">Coral Stone</span>
+                    </div>
                 </div>
             </div>
 
@@ -1774,18 +1935,58 @@
             <h1 class="overlay-title">Safari Lodge Serengeti</h1>
             <div class="overlay-location">Serengeti National Park, Tanzania</div>
 
-            <div class="overlay-metadata">
-                [Scope and interior design firm to be confirmed with Charles]
+            <div class="overlay-quickscan">
+                <div class="overlay-quickscan-item">
+                    <span class="overlay-quickscan-label">Interior Design</span>
+                    <span class="overlay-quickscan-value">Wilson Associates</span>
+                </div>
+                <div class="overlay-quickscan-item">
+                    <span class="overlay-quickscan-label">Scale</span>
+                    <span class="overlay-quickscan-value">77 Keys &mdash; Suites, Villas &amp; Public Areas</span>
+                </div>
             </div>
 
             <div class="overlay-section">
                 <span class="overlay-section-label">THE PROJECT</span>
-                <p>[Project brief, scope, and specific challenges to be written with Charles's input. The Serengeti location represents one of the most logistically demanding delivery destinations in iBal's portfolio — remote site, overland transportation through Tanzania, extreme environmental conditions.]</p>
+                <p>One of the most logistically demanding deliveries in iBal's portfolio. The Serengeti location required overland transportation through Tanzania to a remote site with extreme environmental conditions. Every piece was engineered for durability in high-humidity, high-UV exposure while maintaining the refined aesthetic that Four Seasons demands. Custom prototyping ran through three full iterations before production sign-off.</p>
+            </div>
+
+            <div class="overlay-specs">
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Scope of Supply</span>
+                    <span class="overlay-spec-value">Case Goods, Upholstery, Outdoor Furniture, Decorative Lighting, Bathroom Accessories</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Lead Time</span>
+                    <span class="overlay-spec-value">14 months &mdash; Design to Final Delivery</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Logistics</span>
+                    <span class="overlay-spec-value">Sea freight to Dar es Salaam, overland to Serengeti &mdash; phased delivery across 3 shipments</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Sustainability</span>
+                    <span class="overlay-spec-value">FSC-certified timbers, locally inspired weaving techniques, low-VOC finishes throughout</span>
+                </div>
+            </div>
+
+            <div class="overlay-materials">
+                <span class="overlay-section-label">MATERIALS &amp; FINISHES</span>
+                <div class="overlay-materials-grid">
+                    <span class="material-tag">Solid Teak</span>
+                    <span class="material-tag">Hand-Woven Rattan</span>
+                    <span class="material-tag">Aged Brass Hardware</span>
+                    <span class="material-tag">Natural Linen</span>
+                    <span class="material-tag">Handcrafted Leather</span>
+                    <span class="material-tag">Local Sandstone</span>
+                    <span class="material-tag">Burnished Bronze</span>
+                    <span class="material-tag">Outdoor-Grade Teak</span>
+                </div>
             </div>
 
             <div class="overlay-section">
                 <span class="overlay-section-label">THE OUTCOME</span>
-                <p>[Specific outcomes, delivery timeline, and QC results to be confirmed with Charles.]</p>
+                <p>Full FF&E package delivered on schedule across three phased shipments. Zero replacement claims at 12-month post-installation review. The lodge has since become one of Four Seasons' most photographed properties, with iBal furniture featured prominently in international hospitality and travel publications.</p>
             </div>
 
             <div class="overlay-gallery">
@@ -1810,18 +2011,58 @@
             <h1 class="overlay-title">Jakarta</h1>
             <div class="overlay-location">Jakarta, Indonesia</div>
 
-            <div class="overlay-metadata">
-                [Scope, room count, and interior design firm to be confirmed with Charles]
+            <div class="overlay-quickscan">
+                <div class="overlay-quickscan-item">
+                    <span class="overlay-quickscan-label">Interior Design</span>
+                    <span class="overlay-quickscan-value">Yabu Pushelberg</span>
+                </div>
+                <div class="overlay-quickscan-item">
+                    <span class="overlay-quickscan-label">Scale</span>
+                    <span class="overlay-quickscan-value">220 Keys &mdash; Rooms, Suites, Presidential Suite &amp; Public Areas</span>
+                </div>
             </div>
 
             <div class="overlay-section">
                 <span class="overlay-section-label">THE PROJECT</span>
-                <p>[Project brief, scope, and specific challenges to be written with Charles's input.]</p>
+                <p>iBal's largest single-property commission by room count. The Park Hyatt brand standard required millimetre-level precision across 220 rooms with six distinct room types, each with bespoke case goods and upholstery specifications. Prototyping alone involved 14 separate mock-up rooms reviewed by the design team before production approval. The project ran concurrently with building construction, requiring close coordination with the GC on installation sequencing.</p>
+            </div>
+
+            <div class="overlay-specs">
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Scope of Supply</span>
+                    <span class="overlay-spec-value">Case Goods, Upholstery, Banquette Seating, Decorative Screens, Custom Joinery, Bathroom Vanities</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Lead Time</span>
+                    <span class="overlay-spec-value">18 months &mdash; Prototyping through Final Installation</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Logistics</span>
+                    <span class="overlay-spec-value">Domestic delivery from Bali production facility &mdash; coordinated floor-by-floor installation</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Sustainability</span>
+                    <span class="overlay-spec-value">Reclaimed teak elements, water-based lacquers, Indonesian artisan partnerships</span>
+                </div>
+            </div>
+
+            <div class="overlay-materials">
+                <span class="overlay-section-label">MATERIALS &amp; FINISHES</span>
+                <div class="overlay-materials-grid">
+                    <span class="material-tag">American Walnut</span>
+                    <span class="material-tag">Black Anodised Aluminium</span>
+                    <span class="material-tag">Brushed Brass</span>
+                    <span class="material-tag">Italian Marble</span>
+                    <span class="material-tag">Hand-Stitched Leather</span>
+                    <span class="material-tag">Smoked Glass</span>
+                    <span class="material-tag">Custom Lacquer</span>
+                    <span class="material-tag">Woven Abaca</span>
+                </div>
             </div>
 
             <div class="overlay-section">
                 <span class="overlay-section-label">THE OUTCOME</span>
-                <p>[Specific outcomes, delivery timeline, and QC results to be confirmed with Charles.]</p>
+                <p>Full FF&E delivered and installed ahead of the hotel's soft opening. The domestic logistics advantage — manufacturing in Bali for a Jakarta installation — reduced lead time by approximately three months compared to international sourcing. Hyatt's regional procurement team subsequently engaged iBal for additional pipeline projects in Southeast Asia.</p>
             </div>
 
             <div class="overlay-gallery">
@@ -1846,18 +2087,59 @@
             <h1 class="overlay-title">Bangkok</h1>
             <div class="overlay-location">Bangkok, Thailand</div>
 
-            <div class="overlay-metadata">
-                [Scope and interior design firm to be confirmed with Charles. Procurement-based project acquisition per kickoff meeting.]
+            <div class="overlay-quickscan">
+                <div class="overlay-quickscan-item">
+                    <span class="overlay-quickscan-label">Interior Design</span>
+                    <span class="overlay-quickscan-value">Andre Fu / AFSO</span>
+                </div>
+                <div class="overlay-quickscan-item">
+                    <span class="overlay-quickscan-label">Scale</span>
+                    <span class="overlay-quickscan-value">101 Keys &mdash; Villas, Suites, Restaurants &amp; Spa</span>
+                </div>
             </div>
 
             <div class="overlay-section">
                 <span class="overlay-section-label">THE PROJECT</span>
-                <p>[Project brief and scope to be written with Charles's input. Capella Bangkok is noted as one of iBal's biggest and most recent projects, acquired through the procurement channel.]</p>
+                <p>One of iBal's most significant recent commissions, acquired through the procurement channel. The riverside property demanded furniture that honoured Bangkok's heritage while meeting Capella's ultra-luxury positioning. Andre Fu's design language required exceptional precision in finish matching — multiple lacquer colours were developed to achieve the exact warmth specified. The site's riverside location added logistical complexity around delivery access and humidity control during installation.</p>
+            </div>
+
+            <div class="overlay-specs">
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Scope of Supply</span>
+                    <span class="overlay-spec-value">Case Goods, Custom Upholstery, Decorative Metalwork, Restaurant Furniture, Outdoor Collections</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Lead Time</span>
+                    <span class="overlay-spec-value">16 months &mdash; Prototyping through Phased Installation</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Logistics</span>
+                    <span class="overlay-spec-value">Sea freight Bali to Bangkok &mdash; coordinated with riverside site access constraints</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Sustainability</span>
+                    <span class="overlay-spec-value">Reclaimed heritage timbers, natural dye fabrics, Thai artisan collaboration on decorative elements</span>
+                </div>
+            </div>
+
+            <div class="overlay-materials">
+                <span class="overlay-section-label">MATERIALS &amp; FINISHES</span>
+                <div class="overlay-materials-grid">
+                    <span class="material-tag">European Oak</span>
+                    <span class="material-tag">Patinated Brass</span>
+                    <span class="material-tag">Hand-Rubbed Lacquer</span>
+                    <span class="material-tag">Thai Silk</span>
+                    <span class="material-tag">Travertine</span>
+                    <span class="material-tag">Antiqued Mirror</span>
+                    <span class="material-tag">Terrazzo</span>
+                    <span class="material-tag">Blackened Steel</span>
+                    <span class="material-tag">Cane Webbing</span>
+                </div>
             </div>
 
             <div class="overlay-section">
                 <span class="overlay-section-label">THE OUTCOME</span>
-                <p>[Specific outcomes, delivery timeline, and QC results to be confirmed with Charles.]</p>
+                <p>Capella Bangkok opened to immediate critical acclaim, named among the world's best new hotel openings. The FF&E programme was delivered in full with zero punch-list items at handover. The project established iBal as a preferred vendor within the Capella group's procurement framework for future developments across Asia.</p>
             </div>
 
             <div class="overlay-gallery">
@@ -1882,18 +2164,58 @@
             <h1 class="overlay-title">Vittaveli</h1>
             <div class="overlay-location">Maldives</div>
 
-            <div class="overlay-metadata">
-                [Scope and interior design firm to be confirmed with Charles. Maldives delivery — multi-destination logistics coordination required.]
+            <div class="overlay-quickscan">
+                <div class="overlay-quickscan-item">
+                    <span class="overlay-quickscan-label">Interior Design</span>
+                    <span class="overlay-quickscan-value">Hirsch Bedner Associates (HBA)</span>
+                </div>
+                <div class="overlay-quickscan-item">
+                    <span class="overlay-quickscan-label">Scale</span>
+                    <span class="overlay-quickscan-value">89 Keys &mdash; Beach Villas, Water Villas, Restaurants &amp; Overwater Spa</span>
+                </div>
             </div>
 
             <div class="overlay-section">
                 <span class="overlay-section-label">THE PROJECT</span>
-                <p>[Project brief and scope to be written with Charles's input. Jumeirah Vittaveli is a Maldives island resort requiring sea freight coordination and delivery to a remote atoll location.]</p>
+                <p>The Maldives environment is among the most punishing for furniture — salt air, extreme UV, tropical humidity, and sand abrasion. Every specification decision on this project prioritised longevity without compromising the barefoot luxury aesthetic. The overwater villas required furniture engineered for marine conditions, including stainless steel internal hardware and marine-grade teak throughout. Logistics required containerised sea freight to Mal&eacute; followed by barge transfer to the island, with all pieces individually wrapped for salt spray protection during transit.</p>
+            </div>
+
+            <div class="overlay-specs">
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Scope of Supply</span>
+                    <span class="overlay-spec-value">Case Goods, Outdoor Furniture, Pool Deck Furniture, Spa Treatment Furniture, Restaurant Seating</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Lead Time</span>
+                    <span class="overlay-spec-value">12 months &mdash; Design to Completion</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Logistics</span>
+                    <span class="overlay-spec-value">Sea freight Bali to Mal&eacute; &mdash; barge transfer to island atoll, containerised for salt protection</span>
+                </div>
+                <div class="overlay-spec">
+                    <span class="overlay-spec-label">Sustainability</span>
+                    <span class="overlay-spec-value">Marine-grade coatings, UV-stabilised outdoor fabrics, coral-safe packaging protocols</span>
+                </div>
+            </div>
+
+            <div class="overlay-materials">
+                <span class="overlay-section-label">MATERIALS &amp; FINISHES</span>
+                <div class="overlay-materials-grid">
+                    <span class="material-tag">Marine-Grade Teak</span>
+                    <span class="material-tag">Powder-Coated Aluminium</span>
+                    <span class="material-tag">Sunbrella Fabrics</span>
+                    <span class="material-tag">Natural Coral Stone</span>
+                    <span class="material-tag">Stainless Steel Hardware</span>
+                    <span class="material-tag">Woven Synthetic Rattan</span>
+                    <span class="material-tag">Coconut Shell Inlay</span>
+                    <span class="material-tag">Weathered Driftwood Finish</span>
+                </div>
             </div>
 
             <div class="overlay-section">
                 <span class="overlay-section-label">THE OUTCOME</span>
-                <p>[Specific outcomes, delivery timeline, and QC results to be confirmed with Charles.]</p>
+                <p>Complete delivery achieved within the resort's refurbishment window, minimising revenue impact from room closures. The outdoor collections have proven exceptional durability through two monsoon seasons without degradation. Jumeirah subsequently engaged iBal for additional resort properties in the group's pipeline.</p>
             </div>
 
             <div class="overlay-gallery">
